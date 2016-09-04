@@ -1,0 +1,59 @@
+#include <mega328P.h>
+#include <delay.h>
+#include <sonido1.c>
+#include <sonido2.c>
+#include <sonido3.c>
+unsigned int i;
+
+void main()
+{
+    TCCR0A=0x83;
+    TCCR0B=0x01;
+    DDRD.6=1;
+    CLKPR=0x80;
+    CLKPR=0x00;
+    PORTD.0=1;
+    PORTD.1=1;
+    PORTD.2=1;
+    while(1)
+    
+    {
+        i=0;
+        if(PIND.0==0){
+        delay_ms(30);
+        while(i<7200){
+        OCR0A=sonido1[i++];
+        delay_us(122);
+        #asm
+        NOP
+        NOP
+        NOP
+        #endasm
+        }
+        }
+        if(PIND.1==0){
+        delay_ms(30);
+        while(i<7280){
+        OCR0A=sonido2[i++];
+        delay_us(122);
+        #asm
+        NOP
+        NOP
+        NOP
+        #endasm
+        }
+        }
+        if(PIND.2==0){
+        delay_ms(30);
+        while(i<7200){
+        OCR0A=sonido3[i++];
+        delay_us(122);
+        #asm
+        NOP
+        NOP
+        NOP
+        #endasm
+        }
+        }
+    }
+}

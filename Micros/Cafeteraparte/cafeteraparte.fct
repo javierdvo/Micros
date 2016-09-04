@@ -1,0 +1,7 @@
+main DSTACK_USAGE:0 DSTACK_LEVEL:0 FILE:"cafeteraparte.c" LINE:133
+HaciendoCafe DSTACK_USAGE:0 DSTACK_LEVEL:0 FILE:"cafeteraparte.c" LINE:79
+sprintf DSTACK_USAGE:14 DSTACK_LEVEL:14 FILE:"C:\cvavreval\lib\stdio.lib" LINE:1410
+_print DSTACK_USAGE:94 DSTACK_LEVEL:108 FILE:"C:\cvavreval\lib\stdio.lib" LINE:1162
+_ftoe DSTACK_USAGE:15 DSTACK_LEVEL:123 FILE:"C:\cvavreval\lib\stdio.lib" LINE:1098
+floor DSTACK_USAGE:4 DSTACK_LEVEL:127 FILE:"C:\cvavreval\lib\math.lib" LINE:659
+ftrunc DSTACK_USAGE:4 DSTACK_LEVEL:131 FILE:"C:\cvavreval\lib\math.lib" LINE:544

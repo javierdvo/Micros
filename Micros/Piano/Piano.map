@@ -1,0 +1,18 @@
+RAM Allocation
+Variable                                                          Address   Size
+--------------------------------------------------------------------------------
+Cancion                                                           0x0300     400
+mseg                                                              0x0490       4
+Milis                                                             0x0494     400
+aux                                                               0x0624       4
+i                                                                 0x0628       1
+fin                                                               0x0629       1
+j                                                                 0x062A       1
+
+EEPROM Allocation
+Variable                                                          Address   Size
+--------------------------------------------------------------------------------
+
+Register Allocation
+Variable                                                          Register  Size
+--------------------------------------------------------------------------------

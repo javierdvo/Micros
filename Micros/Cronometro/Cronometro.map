@@ -1,0 +1,27 @@
+RAM Allocation
+Variable                                                          Address   Size
+--------------------------------------------------------------------------------
+Cadena                                                            0x0300      20
+car0                                                              0x0314       8
+car1                                                              0x031C       8
+car2                                                              0x0324       8
+car3                                                              0x032C       8
+car4                                                              0x0334       8
+car5                                                              0x033C       8
+car6                                                              0x0344       8
+car7                                                              0x034C       8
+car8                                                              0x0354       8
+car9                                                              0x035C       8
+
+EEPROM Allocation
+Variable                                                          Address   Size
+--------------------------------------------------------------------------------
+
+Register Allocation
+Variable                                                          Register  Size
+--------------------------------------------------------------------------------
+cursor                                                            R5           1
+segundos                                                          R4           1
+minutos                                                           R7           1
+decimas                                                           R6           1
+y                                                                 R8,R9        2

@@ -1,0 +1,12 @@
+VERSION:3 SOURCE_TIMESTAMP:456B66B2
+NODE:I LEVEL:0 LINE:1 "C:\cvavreval\inc\stdio.h"
+NODE:I LEVEL:0 LINE:2 "C:\cvavreval\inc\mega328p.h"
+NODE:V LEVEL:0 LINE:4 "sep1 -> RAM:????"
+NODE:V LEVEL:0 LINE:4 "sep2 -> RAM:????"
+NODE:V LEVEL:0 LINE:5 "Cadena -> RAM:????"
+NODE:V LEVEL:0 LINE:6 "dia -> RAM:????"
+NODE:V LEVEL:0 LINE:6 "mes -> RAM:????"
+NODE:V LEVEL:0 LINE:6 "diasemana -> RAM:????"
+NODE:V LEVEL:0 LINE:6 "year -> RAM:????"
+NODE:V LEVEL:0 LINE:7 "dias -> RAM:????"
+NODE:F LEVEL:0 LINE:9 "main(void)"

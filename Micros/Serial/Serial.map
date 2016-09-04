@@ -1,0 +1,19 @@
+RAM Allocation
+Variable                                                          Address   Size
+--------------------------------------------------------------------------------
+sep1                                                              0x0300       1
+sep2                                                              0x0301       1
+Cadena                                                            0x0302      20
+dia                                                               0x0316       2
+mes                                                               0x0318       2
+diasemana                                                         0x031A       2
+year                                                              0x031C       2
+dias                                                              0x031E      70
+
+EEPROM Allocation
+Variable                                                          Address   Size
+--------------------------------------------------------------------------------
+
+Register Allocation
+Variable                                                          Register  Size
+--------------------------------------------------------------------------------

@@ -1,0 +1,4 @@
+main DSTACK_USAGE:0 DSTACK_LEVEL:0 FILE:"frecdig.c" LINE:17
+sprintf DSTACK_USAGE:14 DSTACK_LEVEL:14 FILE:"C:\cvavreval\lib\stdio.lib" LINE:1410
+_print DSTACK_USAGE:25 DSTACK_LEVEL:39 FILE:"C:\cvavreval\lib\stdio.lib" LINE:683
+strlen DSTACK_USAGE:2 DSTACK_LEVEL:41 FILE:"C:\cvavreval\lib\string.lib" LINE:1707

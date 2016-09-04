@@ -1,0 +1,225 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      7790,        216]
+NotebookOptionsPosition[      7142,        191]
+NotebookOutlinePosition[      7481,        206]
+CellTagsIndexPosition[      7438,        203]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[{
+ RowBox[{"Clear", "[", "\"\<`*\>\"", "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"f", "[", "x_", "]"}], ":=", 
+   RowBox[{
+    RowBox[{"x", "*", 
+     SuperscriptBox["\[ExponentialE]", "x"]}], "-", " ", "Pi"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"a", "=", "1."}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"b", "=", "1.5"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"iter", "=", "0"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"er", "=", "100"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"itermax", "=", "20"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"tol", "=", "0.5"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Nmax", "=", "20"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"c0", "=", 
+   FractionBox[
+    RowBox[{"a", "+", "b"}], "2"]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"salida", "=", 
+   RowBox[{"{", 
+    RowBox[{"{", 
+     RowBox[{"0", ",", "a", ",", "c0", ",", "b"}], "}"}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"While", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"er", ">", "tol"}], " ", "&&", " ", 
+    RowBox[{"iter", "<", " ", "itermax"}]}], ",", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"If", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"Sign", "[", 
+        RowBox[{"f", "[", "c0", "]"}], "]"}], "\[Equal]", " ", 
+       RowBox[{"Sign", "[", 
+        RowBox[{"f", "[", "a", "]"}], "]"}]}], ",", 
+      RowBox[{"a", "=", "c0"}], ",", 
+      RowBox[{"b", "=", "c0"}]}], "]"}], ";", "\[IndentingNewLine]", 
+    RowBox[{"c1", "=", 
+     FractionBox[
+      RowBox[{"a", "+", "b"}], "2"]}], ";", "\[IndentingNewLine]", 
+    RowBox[{"er", "=", 
+     RowBox[{
+      RowBox[{"Abs", "[", 
+       FractionBox[
+        RowBox[{"c1", "-", "c0"}], "c1"], "]"}], "*", "100"}]}], ";", 
+    "\[IndentingNewLine]", 
+    RowBox[{"iter", "++"}], ";", "\[IndentingNewLine]", 
+    RowBox[{"g", "=", 
+     RowBox[{"AppendTo", "[", 
+      RowBox[{"salida", ",", 
+       RowBox[{"{", 
+        RowBox[{"iter", ",", "a", ",", "c1", ",", "b", ",", "er"}], "}"}]}], 
+      "]"}]}], ";", "\[IndentingNewLine]", 
+    RowBox[{"c0", "=", "c1"}], ";"}]}], "\[IndentingNewLine]", 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"TableForm", "[", 
+  RowBox[{"g", ",", 
+   RowBox[{"TableHeadings", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"None", ",", " ", 
+      RowBox[{"{", 
+       RowBox[{
+       "\"\<Ite\>\"", ",", "\"\<a\>\"", ",", "\"\<xm\>\"", ",", "\"\<b\>\"", 
+        ",", "\"\<Error %\>\""}], "}"}]}], "}"}]}]}], 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Print", "[", 
+  RowBox[{
+  "\"\<La soluci\[OAcute]n aproximada es x=\>\"", ",", "c1", ",", " ", 
+   "\"\< con una tolerancia de \>\"", ",", " ", "er", ",", " ", "\"\<%\>\""}],
+   "]"}], "\[IndentingNewLine]"}], "Input",
+ CellChangeTimes->CompressedData["
+1:eJwdzV1IUwEAhuGjWRyVxItYswKzLKejZkNaRtQCW0iiNaYhBumazGqgLNFM
+EwtCL/oRCZRdpMai2mKggjXYYlotoivpZ5GUpjFlmNHKDZpS5z0XH8/Vx5tj
+bjTWJwuCoJKG27Pa2w+vRI7ao+dvYI1oG0CDUTOE2da+R2hSF7mwKdHmx87X
+rZPo8oU+onPr/jnUjsZsRyRTtGIzxkTnZdT5J/ow+v55PxZUdgyj0t/wGG2N
+cxN4zuN8hQ67OIOdGUnfMViViOAzi38Zn+69FMXy09v+4tupWALzWs2CXtLb
+cTIHW0p0I2HJHV3ucbwZLP6Ct7bYZZO/hsI4q56X9bxMT1qQHIqnpaEtqyIf
+B/etavDPfOoBtFydLMb1F9uOYaFxjwE39LrL8J9CMKHCUVkr/xzqOjzUkFKP
+qp1m2WZXqhsPxjU+vP9j8QXm5gXfYKT/1zQOnwp/ww8nnixsjEs938gSLvVc
+i2LJg8+/8d7MpwQqx8pWUWFdW5chOVWnTEdzaSATd7foN+OoqNPi4tk1PXZ5
+co+jc0Asxab86XK0et+Z0FARqMXuolnZlTMxC/Zusl7A7MLMK2gKdF/H5bs9
+t7Fq1+AdfPgzNIbV1Sov/ge65mrm
+  "]],
+
+Cell[BoxData[
+ InterpretationBox[GridBox[{
+    {"\<\"Ite\"\>", "\<\"a\"\>", "\<\"xm\"\>", "\<\"b\"\>", "\<\"Error %\"\>"},
+    {"0", "1.`", "1.25`", "1.5`", "\<\"\"\>"},
+    {"1", "1.`", "1.125`", "1.25`", "11.11111111111111`"},
+    {"2", "1.`", "1.0625`", "1.125`", "5.88235294117647`"},
+    {"3", "1.0625`", "1.09375`", "1.125`", "2.857142857142857`"},
+    {"4", "1.0625`", "1.078125`", "1.09375`", "1.4492753623188406`"},
+    {"5", "1.0625`", "1.0703125`", "1.078125`", "0.7299270072992701`"},
+    {"6", "1.0703125`", "1.07421875`", "1.078125`", "0.36363636363636365`"}
+   },
+   GridBoxAlignment->{
+    "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+     "RowsIndexed" -> {}},
+   GridBoxSpacings->{"Columns" -> {
+       Offset[0.27999999999999997`], {
+        Offset[2.0999999999999996`]}, 
+       Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+       Offset[0.2], {
+        Offset[0.4]}, 
+       Offset[0.2]}, "RowsIndexed" -> {}}],
+  TableForm[{{0, 1., 1.25, 1.5}, {1, 1., 1.125, 1.25, 11.11111111111111}, {
+    2, 1., 1.0625, 1.125, 5.88235294117647}, {
+    3, 1.0625, 1.09375, 1.125, 2.857142857142857}, {
+    4, 1.0625, 1.078125, 1.09375, 1.4492753623188406`}, {
+    5, 1.0625, 1.0703125, 1.078125, 0.7299270072992701}, {
+    6, 1.0703125, 1.07421875, 1.078125, 0.36363636363636365`}}, 
+   TableHeadings -> {None, {"Ite", "a", "xm", "b", "Error %"}}]]], "Output",
+ CellChangeTimes->{{3.6191897487253017`*^9, 3.6191897817382545`*^9}, {
+  3.6191898776461368`*^9, 3.6191898856517878`*^9}, {3.6191902079142942`*^9, 
+  3.6191902194624443`*^9}}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"La soluci\[OAcute]n aproximada es x=\"\>", "\[InvisibleSpace]",
+    "1.07421875`", "\[InvisibleSpace]", "\<\" con una tolerancia de \"\>", 
+   "\[InvisibleSpace]", "0.36363636363636365`", 
+   "\[InvisibleSpace]", "\<\"%\"\>"}],
+  SequenceForm[
+  "La soluci\[OAcute]n aproximada es x=", 1.07421875, 
+   " con una tolerancia de ", 0.36363636363636365`, "%"],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.619189748726311*^9, 3.6191897817412834`*^9}, {
+  3.6191898776501265`*^9, 3.6191898856547756`*^9}, {3.6191902079192843`*^9, 
+  3.619190219467445*^9}}]
+}, Open  ]],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.6182413526663775`*^9, 3.6182413526743298`*^9}}],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.6182413503546953`*^9, 3.6182413514914975`*^9}}],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.6182413489527073`*^9, 3.6182413489687185`*^9}}],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.6182413475947504`*^9, 3.6182413476097603`*^9}}],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{3.618240267553542*^9},
+ NumberMarks->False],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.6182402689685802`*^9, 3.6182402689865513`*^9}}],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{3.6182400399893456`*^9},
+ NumberMarks->False],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.618240041890706*^9, 3.618240041926709*^9}, {
+  3.618242556643512*^9, 3.6182425568996925`*^9}}]
+},
+WindowSize->{944, 981},
+WindowMargins->{{Automatic, 0}, {Automatic, 0}},
+FrontEndVersion->"10.0 for Microsoft Windows (64-bit) (July 1, 2014)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 3514, 93, 516, "Input"],
+Cell[4097, 117, 1592, 30, 146, "Output"],
+Cell[5692, 149, 607, 12, 23, "Print"]
+}, Open  ]],
+Cell[6314, 164, 96, 1, 31, "Input"],
+Cell[6413, 167, 96, 1, 31, "Input"],
+Cell[6512, 170, 96, 1, 31, "Input"],
+Cell[6611, 173, 96, 1, 31, "Input"],
+Cell[6710, 176, 89, 2, 31, "Input"],
+Cell[6802, 180, 96, 1, 31, "Input"],
+Cell[6901, 183, 91, 2, 31, "Input"],
+Cell[6995, 187, 143, 2, 31, "Input"]
+}
+]
+*)
+
+(* End of internal cache information *)

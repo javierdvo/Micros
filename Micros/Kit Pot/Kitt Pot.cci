@@ -1,0 +1,10 @@
+VERSION:3 SOURCE_TIMESTAMP:4575B6D1
+NODE:I LEVEL:0 LINE:1 "C:\cvavreval\inc\MEGA328P.h"
+NODE:I LEVEL:0 LINE:2 "C:\cvavreval\inc\delay.h"
+NODE:I LEVEL:0 LINE:3 "C:\cvavreval\inc\stdio.h"
+NODE:M LEVEL:0 LINE:5 "ADC_VREF_TYPE"
+NODE:V LEVEL:0 LINE:7 "potDigital -> RAM:????"
+NODE:V LEVEL:0 LINE:8 "pot -> RAM:????"
+NODE:F LEVEL:0 LINE:10 "read_adc(unsigned char adc_input)"
+NODE:F LEVEL:0 LINE:23 "Delay_msKitt(void)"
+NODE:F LEVEL:0 LINE:31 "main(void)"

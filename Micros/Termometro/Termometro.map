@@ -1,0 +1,16 @@
+RAM Allocation
+Variable                                                          Address   Size
+--------------------------------------------------------------------------------
+cursor                                                            0x0300       1
+tempDigital                                                       0x0301       2
+temperatura                                                       0x0303       4
+cadena                                                            0x0307      10
+_seed                                                             0x0311       4
+
+EEPROM Allocation
+Variable                                                          Address   Size
+--------------------------------------------------------------------------------
+
+Register Allocation
+Variable                                                          Register  Size
+--------------------------------------------------------------------------------

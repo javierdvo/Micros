@@ -1,0 +1,10 @@
+VERSION:3 SOURCE_TIMESTAMP:45550EA5
+NODE:I LEVEL:0 LINE:7 "C:\cvavreval\inc\MEGA328P.h"
+NODE:I LEVEL:0 LINE:8 "C:\cvavreval\inc\delay.h"
+NODE:I LEVEL:0 LINE:9 "C:\Users\Javier\SkyDrive\Documents\Micros\Frecuenciometro\display.h"
+NODE:I LEVEL:0 LINE:10 "C:\cvavreval\inc\stdio.h"
+NODE:V LEVEL:0 LINE:12 "TH1 -> RAM:????"
+NODE:V LEVEL:0 LINE:13 "Cadena -> RAM:????"
+NODE:V LEVEL:0 LINE:14 "frecuencia -> RAM:????"
+NODE:V LEVEL:0 LINE:15 "i -> RAM:????"
+NODE:F LEVEL:0 LINE:17 "main(void)"

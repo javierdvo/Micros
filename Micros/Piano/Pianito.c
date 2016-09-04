@@ -1,0 +1,141 @@
+ #include <mega328P.h>
+  #include <delay.h>
+  
+ float Cancion[100]; 
+ unsigned long int mseg=0; 
+ long int Milis[100];
+ long int aux;
+ unsigned char i,fin, j;
+                             
+ void noTono(){
+    TCCR1B=0x00;
+ }
+ 
+interrupt [TIM2_COMPA] void timer2_compa_isr(void)
+{
+  mseg++;
+}
+
+ void tono(float frecuencia)
+{
+    unsigned int cuentasEnt;
+    float cuentas;
+    cuentas=(500000.0/frecuencia);
+    cuentasEnt=cuentas;
+    if((cuentas-cuentasEnt)>+0.5)
+        cuentasEnt++;    
+    OCR1AH=(cuentasEnt-1)/256;
+    OCR1AL=(cuentasEnt-1)%256;
+    TCCR1A=0x40;
+    TCCR1B=0x09;
+}
+ 
+ void main (void){
+    DDRB.1=1; //PB1 de salida
+    PORTB.6=1;
+    PORTB.7=1;
+    PORTD=0xFF;
+    TCCR2A=0x02;
+    TCCR2B=0x02;
+    OCR2A=124;     
+    TIMSK2=0x02;  
+    #asm("sei")
+    i=0;
+    fin=0;
+    while(1)
+    {
+    if(PINB.6==0){
+        for(j=0;j++;j<100){
+        Cancion[j]=0;
+        Milis[j]=0;      }
+        fin=0;}
+    if(PINB.7==0){
+        for(i=0;i<fin;i++){
+            tono(Cancion[i]);
+            delay_ms(Milis[i]);
+            noTono();
+            delay_ms(150);
+        }
+    }
+    if (PIND.0==0){
+         aux=mseg;
+         tono(261.6);
+         delay_ms(30);
+         while (PIND.0==0);
+         Milis[fin]=mseg-aux;
+         Cancion[fin++]=261.6;
+       noTono();
+       delay_ms(30);
+    }
+    if (PIND.1==0){
+         aux=mseg;
+         tono(293.6);
+         delay_ms(30);
+         while (PIND.1==0);
+         Milis[fin]=mseg-aux;
+         Cancion[fin++]=293.6;
+        noTono();     
+        delay_ms(30);
+    }
+    if (PIND.2==0){
+        aux=mseg;
+         tono(329.6);
+         delay_ms(30);
+         while (PIND.2==0);
+         Milis[fin]=mseg-aux;
+         Cancion[fin++]=329.6;
+       noTono();      
+       delay_ms(30);
+    }
+    if (PIND.3==0){
+        aux=mseg;
+         tono(349.2);
+         delay_ms(30);
+         while (PIND.3==0); 
+         Milis[fin]=mseg-aux;
+         Cancion[fin++]=349.2;
+       noTono();      
+       delay_ms(30);
+    }
+    if (PIND.4==0){
+        aux=mseg;
+         tono(391.6);
+         delay_ms(30);
+         while (PIND.4==0); 
+         Milis[fin]=mseg-aux;
+         Cancion[fin++]=391.6;
+       noTono();      
+       delay_ms(30);
+    }
+    if (PIND.5==0){
+        aux=mseg;
+         tono(440.6);
+         delay_ms(30);
+         while (PIND.5==0);
+         Milis[fin]=mseg-aux;
+         Cancion[fin++]=440.6;
+       noTono();      
+       delay_ms(30);
+    }
+    if (PIND.6==0){
+        aux=mseg;
+         tono(493.8);
+         delay_ms(30);
+         while (PIND.6==0); 
+         Milis[fin]=mseg-aux;
+         Cancion[fin++]=493.6;
+       noTono();      
+       delay_ms(30);
+    }
+    if (PIND.7==0){
+        aux=mseg;
+         tono(540.6);
+         delay_ms(30);
+         while (PIND.7==0);
+         Milis[fin]=mseg-aux;
+         Cancion[fin++]=540.6;
+       noTono();      
+       delay_ms(30);
+    }
+    }
+  }

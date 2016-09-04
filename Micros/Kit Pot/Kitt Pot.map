@@ -1,0 +1,13 @@
+RAM Allocation
+Variable                                                          Address   Size
+--------------------------------------------------------------------------------
+potDigital                                                        0x0300       4
+pot                                                               0x0304       4
+
+EEPROM Allocation
+Variable                                                          Address   Size
+--------------------------------------------------------------------------------
+
+Register Allocation
+Variable                                                          Register  Size
+--------------------------------------------------------------------------------

@@ -1,0 +1,17 @@
+ #include <mega328P.h>      
+ #include <delay.h>
+ 
+ 
+ #define RojoPeaton PORTD.3
+ #define RojoAuto PORTD.5
+ #define AmbarAuto PORTD.6
+ #define VerdePeaton PORTD.4
+ #define VerdeAuto PORTD.7
+ unsigned char seg=0;
+                                                                                 
+ #define Dig1 PORTD.0
+ #define Dig2 PORTD.1
+ 
+ flash unsigned char sieteSeg[10]={0xC0,0xF9,0xA4,0xB0,0x99,0xB7,0xBE,0xE1,0xFE,0xF6};
+ 
+ 

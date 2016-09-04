@@ -1,0 +1,150 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      4553,        141]
+NotebookOptionsPosition[      4202,        124]
+NotebookOutlinePosition[      4545,        139]
+CellTagsIndexPosition[      4502,        136]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[{
+ RowBox[{"Clear", "[", "\"\<`*\>\"", "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"f", "[", "x_", "]"}], ":=", 
+   RowBox[{
+    RowBox[{"x", "*", 
+     SuperscriptBox["\[ExponentialE]", "x"]}], "-", " ", "Pi"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"x0", "=", "1."}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"tol", "=", "0.5"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"Nmax", "=", "20"}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"salida", "=", 
+   RowBox[{"{", 
+    RowBox[{"{", 
+     RowBox[{"1", ",", "x0"}], "}"}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Do", "[", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"x1", "=", 
+     RowBox[{"x0", "-", 
+      FractionBox[
+       RowBox[{"f", "[", "x0", "]"}], 
+       RowBox[{
+        RowBox[{"f", "'"}], "[", "x0", "]"}]]}]}], ";", "\[IndentingNewLine]", 
+    RowBox[{"er", "=", 
+     RowBox[{
+      RowBox[{"Abs", "[", 
+       FractionBox[
+        RowBox[{"x1", "-", "x0"}], "x1"], "]"}], "*", "100"}]}], ";", 
+    "\[IndentingNewLine]", 
+    RowBox[{"g", "=", 
+     RowBox[{"AppendTo", "[", 
+      RowBox[{"salida", ",", 
+       RowBox[{"{", 
+        RowBox[{"it", ",", "x1", ",", "er"}], "}"}]}], "]"}]}], ";", 
+    "\[IndentingNewLine]", 
+    RowBox[{"iter", "=", "it"}], ";", "\[IndentingNewLine]", 
+    RowBox[{"If", "[", 
+     RowBox[{
+      RowBox[{"er", "<", "tol"}], ",", 
+      RowBox[{"Break", "[", "]"}], ",", 
+      RowBox[{"x0", "=", "x1"}]}], "]"}], ";"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"it", ",", "1", ",", " ", "Nmax"}], "}"}]}], 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"TableForm", "[", 
+  RowBox[{"g", ",", 
+   RowBox[{"TableHeadings", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"None", ",", " ", 
+      RowBox[{"{", 
+       RowBox[{
+       "\"\<Iteracion\>\"", ",", "\"\<x1\>\"", ",", "\"\<Error %\>\""}], 
+       "}"}]}], "}"}]}]}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Print", "[", 
+  RowBox[{
+  "\"\<La solucion es x=\>\"", ",", "x1", ",", " ", "\"\< con \>\"", ",", " ",
+    "iter", ",", " ", "\"\< iteraciones\>\""}], 
+  "]"}], "\[IndentingNewLine]"}], "Input",
+ CellChangeTimes->{{3.6185870127756424`*^9, 3.618587179178193*^9}, {
+  3.619190534487688*^9, 3.619190544300629*^9}}],
+
+Cell[BoxData[
+ InterpretationBox[GridBox[{
+    {"\<\"Iteracion\"\>", "\<\"x1\"\>", "\<\"Error %\"\>"},
+    {"1", "1.`", "\<\"\"\>"},
+    {"1", "1.0778636748954609`", "7.2238889489445555`"},
+    {"2", "1.073671269359628`", "0.39047384944307706`"}
+   },
+   GridBoxAlignment->{
+    "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+     "RowsIndexed" -> {}},
+   GridBoxSpacings->{"Columns" -> {
+       Offset[0.27999999999999997`], {
+        Offset[2.0999999999999996`]}, 
+       Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+       Offset[0.2], {
+        Offset[0.4]}, 
+       Offset[0.2]}, "RowsIndexed" -> {}}],
+  TableForm[{{1, 1.}, {1, 1.0778636748954609`, 7.2238889489445555`}, {
+    2, 1.073671269359628, 0.39047384944307706`}}, 
+   TableHeadings -> {None, {"Iteracion", "x1", "Error %"}}]]], "Output",
+ CellChangeTimes->{3.618587186154112*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"La solucion es x=\"\>", "\[InvisibleSpace]", 
+   "1.073671269359628`", "\[InvisibleSpace]", "\<\" con \"\>", 
+   "\[InvisibleSpace]", "2", "\[InvisibleSpace]", "\<\" iteraciones\"\>"}],
+  SequenceForm[
+  "La solucion es x=", 1.073671269359628, " con ", 2, " iteraciones"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.6185871861551123`*^9}]
+}, Open  ]]
+},
+WindowSize->{944, 981},
+WindowMargins->{{Automatic, 325}, {Automatic, 269}},
+FrontEndVersion->"10.0 for Microsoft Windows (64-bit) (July 1, 2014)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 2314, 67, 382, "Input"],
+Cell[2897, 91, 891, 20, 72, "Output"],
+Cell[3791, 113, 395, 8, 23, "Print"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

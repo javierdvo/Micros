@@ -1,0 +1,24 @@
+RAM Allocation
+Variable                                                          Address   Size
+--------------------------------------------------------------------------------
+cursor                                                            0x0300       1
+car0                                                              0x0301       8
+car1                                                              0x0309       8
+segundosCafe                                                      0x0311      16
+encendido                                                         0x0321       2
+entrada                                                           0x0323       1
+aguaCafe                                                          0x0324      16
+seg                                                               0x0334       2
+agua                                                              0x0336       2
+i                                                                 0x0338       2
+cuentas                                                           0x033A       2
+Cadenaentra                                                       0x033C      10
+_seed                                                             0x0346       4
+
+EEPROM Allocation
+Variable                                                          Address   Size
+--------------------------------------------------------------------------------
+
+Register Allocation
+Variable                                                          Register  Size
+--------------------------------------------------------------------------------

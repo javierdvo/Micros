@@ -1,0 +1,246 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      8413,        237]
+NotebookOptionsPosition[      7857,        215]
+NotebookOutlinePosition[      8200,        230]
+CellTagsIndexPosition[      8157,        227]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[{
+ RowBox[{"Clear", "[", "\"\<`*\>\"", "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"f", "[", "x_", "]"}], ":=", 
+   RowBox[{
+    RowBox[{"x", "*", 
+     SuperscriptBox["\[ExponentialE]", "x"]}], "-", " ", "Pi"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"x0", "=", "1."}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"x1", "=", "1.2"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"tol", "=", "0.5"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"Nmax", "=", "20"}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"salida", "=", 
+   RowBox[{"{", 
+    RowBox[{"{", 
+     RowBox[{"1", ",", "x0"}], "}"}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Do", "[", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"x2", "=", 
+     RowBox[{
+      RowBox[{"x1", "-", 
+       RowBox[{
+        FractionBox[
+         RowBox[{
+          RowBox[{"f", "[", "x1", "]"}], "*", 
+          RowBox[{"(", 
+           RowBox[{"x1", "-", "x0"}], ")"}]}], 
+         RowBox[{
+          RowBox[{"f", "[", "x1", "]"}], "-", 
+          RowBox[{"f", "[", "x0", "]"}]}]], "\[IndentingNewLine]", "er"}]}], 
+      "=", 
+      RowBox[{
+       RowBox[{"Abs", "[", 
+        FractionBox[
+         RowBox[{"x1", "-", "x0"}], "x1"], "]"}], "*", "100"}]}]}], ";", 
+    "\[IndentingNewLine]", 
+    RowBox[{"g", "=", 
+     RowBox[{"AppendTo", "[", 
+      RowBox[{"salida", ",", 
+       RowBox[{"{", 
+        RowBox[{"it", ",", "x1", ",", "er"}], "}"}]}], "]"}]}], ";", 
+    "\[IndentingNewLine]", 
+    RowBox[{"iter", "=", "it"}], ";", "\[IndentingNewLine]", 
+    RowBox[{"If", "[", 
+     RowBox[{
+      RowBox[{"er", "<", "tol"}], ",", 
+      RowBox[{"Break", "[", "]"}], ",", 
+      RowBox[{"x0", "=", "x1"}]}], "]"}], ";"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"it", ",", "1", ",", " ", "Nmax"}], "}"}]}], 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"TableForm", "[", 
+  RowBox[{"g", ",", 
+   RowBox[{"TableHeadings", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"None", ",", " ", 
+      RowBox[{"{", 
+       RowBox[{
+       "\"\<Iteracion\>\"", ",", "\"\<x1\>\"", ",", "\"\<Error %\>\""}], 
+       "}"}]}], "}"}]}]}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Print", "[", 
+  RowBox[{
+  "\"\<La solucion es x=\>\"", ",", "x1", ",", " ", "\"\< con \>\"", ",", " ",
+    "iter", ",", " ", "\"\< iteraciones\>\""}], 
+  "]"}], "\[IndentingNewLine]"}], "Input",
+ CellChangeTimes->{{3.6185870127756424`*^9, 3.618587179178193*^9}, {
+   3.619190534487688*^9, 3.619190544300629*^9}, 3.6191915875823655`*^9, {
+   3.6191916257159786`*^9, 3.619191631057526*^9}}],
+
+Cell[BoxData["1.2`"], "Output",
+ CellChangeTimes->{
+  3.618587186154112*^9, {3.619191618016531*^9, 3.619191633320093*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"Set", "::", "write"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Tag \[NoBreak]\\!\\(Plus\\)\[NoBreak] in \
+\[NoBreak]\\!\\(\\(\\(1.2` \[VeryThinSpace]\\)\\) - \
+\\(\\(0.13311877556427343`\\\\ er\\)\\)\\)\[NoBreak] is Protected. \
+\\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", \
+ButtonFrame->None, ButtonData:>\\\"paclet:ref/message/General/write\\\", \
+ButtonNote -> \\\"Set::write\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{{3.6191916178294125`*^9, 3.6191916333641376`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"Set", "::", "write"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Tag \[NoBreak]\\!\\(Plus\\)\[NoBreak] in \
+\[NoBreak]\\!\\(\\(\\(1.2` \[VeryThinSpace]\\)\\) - \
+\\(\\(0.13311877556427343`\\\\ er\\)\\)\\)\[NoBreak] is Protected. \
+\\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", \
+ButtonFrame->None, ButtonData:>\\\"paclet:ref/message/General/write\\\", \
+ButtonNote -> \\\"Set::write\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{{3.6191916178294125`*^9, 3.619191633412173*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"Set", "::", "write"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Tag \[NoBreak]\\!\\(Plus\\)\[NoBreak] in \
+\[NoBreak]\\!\\(\\(\\(1.2` \[VeryThinSpace]\\)\\) - \
+\\(\\(0.13311877556427343`\\\\ er\\)\\)\\)\[NoBreak] is Protected. \
+\\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", \
+ButtonFrame->None, ButtonData:>\\\"paclet:ref/message/General/write\\\", \
+ButtonNote -> \\\"Set::write\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{{3.6191916178294125`*^9, 3.6191916334532013`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"General", "::", "stop"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Further output of \[NoBreak]\\!\\(\\*StyleBox[\\(Set :: \
+write\\), \\\"MessageName\\\"]\\)\[NoBreak] will be suppressed during this \
+calculation. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", \
+ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/General/stop\\\", ButtonNote -> \
+\\\"General::stop\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{{3.6191916178294125`*^9, 3.6191916334752045`*^9}}],
+
+Cell[BoxData[
+ InterpretationBox[GridBox[{
+    {"\<\"Iteracion\"\>", "\<\"x1\"\>", "\<\"Error %\"\>"},
+    {"1", "1.`", "\<\"\"\>"},
+    {"1", "1.2`", "er"},
+    {"2", "1.2`", "er"},
+    {"3", "1.2`", "er"},
+    {"4", "1.2`", "er"},
+    {"5", "1.2`", "er"},
+    {"6", "1.2`", "er"},
+    {"7", "1.2`", "er"},
+    {"8", "1.2`", "er"},
+    {"9", "1.2`", "er"},
+    {"10", "1.2`", "er"},
+    {"11", "1.2`", "er"},
+    {"12", "1.2`", "er"},
+    {"13", "1.2`", "er"},
+    {"14", "1.2`", "er"},
+    {"15", "1.2`", "er"},
+    {"16", "1.2`", "er"},
+    {"17", "1.2`", "er"},
+    {"18", "1.2`", "er"},
+    {"19", "1.2`", "er"},
+    {"20", "1.2`", "er"}
+   },
+   GridBoxAlignment->{
+    "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+     "RowsIndexed" -> {}},
+   GridBoxSpacings->{"Columns" -> {
+       Offset[0.27999999999999997`], {
+        Offset[2.0999999999999996`]}, 
+       Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+       Offset[0.2], {
+        Offset[0.4]}, 
+       Offset[0.2]}, "RowsIndexed" -> {}}],
+  TableForm[{{1, 1.}, {1, 1.2, $CellContext`er}, {2, 1.2, $CellContext`er}, {
+    3, 1.2, $CellContext`er}, {4, 1.2, $CellContext`er}, {
+    5, 1.2, $CellContext`er}, {6, 1.2, $CellContext`er}, {
+    7, 1.2, $CellContext`er}, {8, 1.2, $CellContext`er}, {
+    9, 1.2, $CellContext`er}, {10, 1.2, $CellContext`er}, {
+    11, 1.2, $CellContext`er}, {12, 1.2, $CellContext`er}, {
+    13, 1.2, $CellContext`er}, {14, 1.2, $CellContext`er}, {
+    15, 1.2, $CellContext`er}, {16, 1.2, $CellContext`er}, {
+    17, 1.2, $CellContext`er}, {18, 1.2, $CellContext`er}, {
+    19, 1.2, $CellContext`er}, {20, 1.2, $CellContext`er}}, 
+   TableHeadings -> {None, {"Iteracion", "x1", "Error %"}}]]], "Output",
+ CellChangeTimes->{
+  3.618587186154112*^9, {3.619191618016531*^9, 3.619191633501235*^9}}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"La solucion es x=\"\>", "\[InvisibleSpace]", "1.2`", 
+   "\[InvisibleSpace]", "\<\" con \"\>", "\[InvisibleSpace]", "20", 
+   "\[InvisibleSpace]", "\<\" iteraciones\"\>"}],
+  SequenceForm["La solucion es x=", 1.2, " con ", 20, " iteraciones"],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.6185871861551123`*^9, {3.61919161802255*^9, 3.6191916335032244`*^9}}]
+}, Open  ]]
+},
+WindowSize->{944, 981},
+WindowMargins->{{Automatic, 325}, {Automatic, 269}},
+FrontEndVersion->"10.0 for Microsoft Windows (64-bit) (July 1, 2014)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 2616, 75, 402, "Input"],
+Cell[3199, 99, 122, 2, 31, "Output"],
+Cell[3324, 103, 566, 11, 21, "Message"],
+Cell[3893, 116, 564, 11, 21, "Message"],
+Cell[4460, 129, 566, 11, 21, "Message"],
+Cell[5029, 142, 555, 11, 21, "Message"],
+Cell[5587, 155, 1835, 47, 356, "Output"],
+Cell[7425, 204, 416, 8, 23, "Print"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

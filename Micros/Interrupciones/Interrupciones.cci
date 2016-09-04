@@ -1,0 +1,8 @@
+VERSION:3 SOURCE_TIMESTAMP:45756566
+NODE:I LEVEL:0 LINE:1 "C:\cvavreval\inc\mega328P.h"
+NODE:I LEVEL:0 LINE:2 "C:\cvavreval\inc\delay.h"
+NODE:C LEVEL:0 LINE:5 "sieteSeg -> FLASH"
+NODE:V LEVEL:0 LINE:6 "seg -> RAM:????"
+NODE:V LEVEL:0 LINE:6 "contador -> RAM:????"
+NODE:F LEVEL:0 LINE:8 "timer0_compa_isr(void)"
+NODE:F LEVEL:0 LINE:21 "main(void)"

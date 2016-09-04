@@ -1,0 +1,16 @@
+RAM Allocation
+Variable                                                          Address   Size
+--------------------------------------------------------------------------------
+cursor                                                            0x0300       1
+TH1                                                               0x0301       1
+Cadena                                                            0x0302      15
+frecuencia                                                        0x0311       4
+i                                                                 0x0315       2
+
+EEPROM Allocation
+Variable                                                          Address   Size
+--------------------------------------------------------------------------------
+
+Register Allocation
+Variable                                                          Register  Size
+--------------------------------------------------------------------------------

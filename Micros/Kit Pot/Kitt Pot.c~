@@ -1,0 +1,93 @@
+#include <MEGA328P.h> 
+#include <delay.h> 
+#include <stdio.h> 
+
+#define ADC_VREF_TYPE 0x40  //tipo de referencia
+
+unsigned long potDigital;
+long pot;
+
+ unsigned int read_adc(unsigned char adc_input)
+{
+ADMUX = adc_input | (ADC_VREF_TYPE & 0xff);
+// Delay needed for the stabilization of the ADC input voltage          
+delay_us(10);
+// Start the AD conversion
+ADCSRA|=0x40;
+// Wait for the AD conversion to complete
+while ((ADCSRA & 0x10)==0);
+ADCSRA|=0x10;
+return ADCW;
+}
+
+void Delay_msKitt(){
+    potDigital=read_adc(1);
+    pot= (potDigital*700/1024.0) +100;
+    delay_ms(pot);
+    
+    
+}            
+
+void main()
+{
+    DDRB=0xFF;
+    PORTC.0=1; 
+    DIDR0=0x01;    //deshabilita el digital
+    ADMUX=ADC_VREF_TYPE & 0xff; // configracion prescale
+    ADCSRA=0x83; //habiliuta adc
+
+    while(1)  
+    {
+ 
+                PORTB.0=1;
+                PORTB.7=1;
+                Delay_msKitt();
+
+
+                PORTB.1=1;
+                PORTB.6=1;
+                PORTB.0=0;
+                PORTB.7=0;
+                Delay_msKitt();
+
+
+                PORTB.2=1;
+                PORTB.5=1;
+                PORTB.1=0;
+                PORTB.6=0;
+                Delay_msKitt();
+
+
+                PORTB.3=1;
+                PORTB.4=1;
+                PORTB.2=0;
+                PORTB.5=0;
+                Delay_msKitt();
+
+                PORTB.2=1;
+                PORTB.5=1;
+                PORTB.3=0;
+                PORTB.4=0;
+                Delay_msKitt();
+
+                PORTB.1=1;
+                PORTB.6=1;
+                PORTB.2=0;
+                PORTB.5=0;
+                Delay_msKitt();
+                PORTB.0=0;
+                PORTB.1=0;
+                PORTB.2=0;
+                PORTB.3=0;
+                PORTB.4=0;
+                PORTB.5=0;
+                PORTB.6=0;
+                PORTB.7=0;
+
+                PORTB.1=0;
+                PORTB.6=0;
+
+
+
+        }
+    }

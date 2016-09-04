@@ -1,0 +1,71 @@
+##########################################################################################
+# SERVER CODE
+
+// Define an HTTP request handler
+ 
+function requestHandler(request, response)
+{
+    try
+    {
+        if ("setting" in request.query)
+        {
+            // 'setting' is a URL-encoded parameter, ie. '/setting=4'
+            
+            local settingValue = request.query.setting
+            
+            // Use the 'response' object to acknowledge reception of the request
+            // to the request's source. '200' is HTTP status code for 'OK'
+            
+            response.send(200, settingValue)
+            device.send("signal", settingValue);
+        }
+    }
+    catch (error)
+    {
+        // Something went wrong; inform the source of the request
+        // '500' is HTTP status code for 'Internal Server Error'
+        
+        response.send(500, error)
+    }
+}
+ 
+// Register the handler function as a callback
+ 
+http.onrequest(requestHandler)
+
+
+
+######################################################################
+# DEVICE CODE
+
+server.log("Device Started");
+ 
+function arduinoData() 
+{
+    imp.sleep(0.05);
+    local b = uart.readstring(80);
+    local state = b;
+    server.log(state);
+}
+
+function test(oli)
+{
+    uart <- hardware.uart57;
+    uart.configure(9600, 8, PARITY_NONE, 1, NO_CTSRTS,arduinoData);
+    server.log(oli);
+    try{
+    uart.flush();
+    uart.write(oli);
+    uart.flush();
+    server.log("success");
+    } 
+    catch(error)
+    {
+     server.log("fail");   
+    }
+}
+
+uart <- hardware.uart57;
+uart.configure(9600, 8, PARITY_NONE, 1, NO_CTSRTS,arduinoData);
+//uart.write(8);
+agent.on("signal", test);

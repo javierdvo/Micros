@@ -1,0 +1,15 @@
+RAM Allocation
+Variable                                                          Address   Size
+--------------------------------------------------------------------------------
+seg                                                               0x0300       1
+sieteSeg                                                          0x0301      10
+
+EEPROM Allocation
+Variable                                                          Address   Size
+--------------------------------------------------------------------------------
+
+Register Allocation
+Variable                                                          Register  Size
+--------------------------------------------------------------------------------
+peaton                                                            GPIOR0.0  1bit
+selDigito                                                         GPIOR0.1  1bit

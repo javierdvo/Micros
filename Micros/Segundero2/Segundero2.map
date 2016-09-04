@@ -1,0 +1,17 @@
+RAM Allocation
+Variable                                                          Address   Size
+--------------------------------------------------------------------------------
+car0                                                              0x0300       8
+car1                                                              0x0308       8
+car2                                                              0x0310       8
+car3                                                              0x0318       8
+
+EEPROM Allocation
+Variable                                                          Address   Size
+--------------------------------------------------------------------------------
+
+Register Allocation
+Variable                                                          Register  Size
+--------------------------------------------------------------------------------
+cursor                                                            R5           1
+i                                                                 R6,R7        2
